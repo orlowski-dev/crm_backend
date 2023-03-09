@@ -36,6 +36,16 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
+MY_APPS = [
+    'users',
+]
+
+INSTALLED_APPS += MY_APPS
+
+# change default user model
+AUTH_USER_MODEL = 'users.CustomUserModel'
+
+# rest framework perms and auth
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
